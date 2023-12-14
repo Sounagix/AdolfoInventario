@@ -9,7 +9,7 @@ public class ManagerController : MonoBehaviour
     private ActionBasedController _controller, _controllerTeleport;
 
     [SerializeField]
-    private GameObject _controllerGO, _controllerTelerportGO, teleportAreas;
+    private GameObject _controllerGO, _controllerTelerportGO, teleportAreas, menuInventarioGO;
 
 
     // Añadimos las acciones
@@ -26,7 +26,10 @@ public class ManagerController : MonoBehaviour
         _controllerTelerportGO.SetActive(false);
         if(teleportAreas != null)
                 teleportAreas.SetActive(false);
+        if (menuInventarioGO != null)
+            menuInventarioGO.SetActive(false);
     }
+
 
     private void Action_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
@@ -34,5 +37,7 @@ public class ManagerController : MonoBehaviour
         _controllerTelerportGO.SetActive(true);
         if (teleportAreas != null)
             teleportAreas.SetActive(true);
+        if (menuInventarioGO != null)
+            menuInventarioGO.SetActive(true);
     }
 }
