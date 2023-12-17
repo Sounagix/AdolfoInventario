@@ -7,7 +7,7 @@ public class Item : ScriptableObject
 {
     public Sprite itemIcon;
 
-    public string name;
+    public string itemName;
 
     public string description;
 

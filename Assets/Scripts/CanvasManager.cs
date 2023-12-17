@@ -18,21 +18,20 @@ public class CanvasManager : MonoBehaviour
 
     void Start()
     {
-        InicializaInventario();
         descriptionText.text = "";
     }
 
-    private void InicializaInventario()
+    public void InicializaInventario()
     {
         int indiceBoton = 0;
-        for (int i = 0; i < inventory.inventary.Count; i++)
+        for (int i = 0; i < inventory.slots.Count; i++)
         {
-            if (inventory.inventary[i] != null)
+            if (inventory.slots[i] != null)
             {
                 InventoryButton iB = buttons[indiceBoton].GetComponent<InventoryButton>();
-                iB.Init(this, inventory.inventary[i].item);
-                iB.SetButtonImg(inventory.inventary[i].item.itemIcon);
-                iB.SetAmount(inventory.inventary[i].amount);
+                iB.Init(this, inventory.slots[i].item);
+                iB.SetButtonImg(inventory.slots[i].item.itemIcon);
+                iB.SetAmount(inventory.slots[i].amount);
                 indiceBoton++;
             }
         }
