@@ -14,4 +14,11 @@ public class Item : ScriptableObject
     public bool stackable;
 
     public GameObject itemPrefab;
+
+    public ItemAction action;
+
+    public int ExecuteAction(Transform _tr, GameObject _prefab)
+    {
+        return action.DoAction(_tr,_prefab);
+    }
 }

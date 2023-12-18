@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79eea44e90e4ba347b4da3346297e453, type: 3}
-  m_Name: EscudoMadera
+  m_Name: Staff
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  name: Escudo de Madera
-  description: "Escudo b\xE1sico con protecci\xF3n m\xEDnima"
-  itemPrefab: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 0b7a266f9659cd447b5e98df1412451a, type: 3}
+  itemName: "Bast\xF3n del vac\xEDo"
+  description: "Basct\xF3n m\xE1gico"
+  stackable: 0
+  itemPrefab: {fileID: 8984021395560798560, guid: 7b0ebca1d30de1f4a9c3f2219974e2b3,
+    type: 3}
+  action: {fileID: 11400000, guid: 1008a5b917c62424ea4f0f813731acd7, type: 2}

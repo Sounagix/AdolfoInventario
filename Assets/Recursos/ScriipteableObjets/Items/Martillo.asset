@@ -18,3 +18,4 @@ MonoBehaviour:
   stackable: 0
   itemPrefab: {fileID: 3894740074865216604, guid: e543164adc5602e4ab609a3e28fbe9ba,
     type: 3}
+  action: {fileID: 11400000, guid: 1008a5b917c62424ea4f0f813731acd7, type: 2}

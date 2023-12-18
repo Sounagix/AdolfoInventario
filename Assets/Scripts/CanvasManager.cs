@@ -16,6 +16,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI descriptionText;
 
+    [SerializeField]
+    private PlayerController playerController;
+
     void Start()
     {
         descriptionText.text = "";
@@ -30,10 +33,11 @@ public class CanvasManager : MonoBehaviour
             {
                 InventoryButton iB = buttons[indiceBoton].GetComponent<InventoryButton>();
                 iB.Init(this, inventory.slots[i].item);
+                iB.AddEvent(inventory.slots[i].item, playerController);
                 iB.SetButtonImg(inventory.slots[i].item.itemIcon);
                 iB.SetAmount(inventory.slots[i].amount);
-                indiceBoton++;
             }
+            indiceBoton++;
         }
     }
 

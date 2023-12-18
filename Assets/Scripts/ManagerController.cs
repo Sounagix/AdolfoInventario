@@ -22,8 +22,10 @@ public class ManagerController : MonoBehaviour
     // Al cancelar, volvemos quitamos el controller y activamos el controllerTeleport
     private void Action_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        _controllerGO.SetActive(true);
-        _controllerTelerportGO.SetActive(false);
+        if(_controllerGO)
+            _controllerGO.SetActive(true);
+        if(_controllerTelerportGO)
+            _controllerTelerportGO.SetActive(false);
         if(teleportAreas != null)
                 teleportAreas.SetActive(false);
         if (menuInventarioGO != null)
@@ -33,8 +35,10 @@ public class ManagerController : MonoBehaviour
 
     private void Action_started(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        _controllerGO.SetActive(false);
-        _controllerTelerportGO.SetActive(true);
+        if (_controllerGO)
+            _controllerGO.SetActive(false);
+        if (_controllerTelerportGO)
+            _controllerTelerportGO.SetActive(true);
         if (teleportAreas != null)
             teleportAreas.SetActive(true);
         if (menuInventarioGO != null)

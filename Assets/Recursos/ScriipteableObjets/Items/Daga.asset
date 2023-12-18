@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Daga
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 758c7c6452695554da9ba3f26ff69211, type: 3}
-  name: Daga
+  itemName: Daga
   description: Daga, perfecta para asesinos
   stackable: 0
   itemPrefab: {fileID: 1992939465511608025, guid: f5c144978a1d1b44e9233b9f25e17e44,
     type: 3}
+  action: {fileID: 11400000, guid: 1008a5b917c62424ea4f0f813731acd7, type: 2}

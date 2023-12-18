@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: PosionAzul
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 3a9421cbc2fa07e458d137a12bceacbe, type: 3}
-  name: "Posi\xF3n de Man\xE1"
+  itemName: "Posi\xF3n azul"
   description: "Restaura el man\xE1"
   stackable: 1
-  itemPrefab: {fileID: 3543184325132220058, guid: aab92f9958a08a84b8932e7a95c0a036,
+  itemPrefab: {fileID: 3543184325132220058, guid: fa41603705083484aa76486fee7f867b,
     type: 3}
+  action: {fileID: 11400000, guid: cdea98997774436468b74b9db30f43d4, type: 2}

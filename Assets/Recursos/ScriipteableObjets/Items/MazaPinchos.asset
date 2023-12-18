@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79eea44e90e4ba347b4da3346297e453, type: 3}
-  m_Name: EspadaMadera
+  m_Name: MazaPinchos
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  itemPrefab: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: f1e0910b5e707794c8dce7c0245306b3, type: 3}
+  itemName: Maza de pinchos
+  description: Maza con pinchos de metal, esto mata
+  stackable: 0
+  itemPrefab: {fileID: 8916940577550455006, guid: 346de1461d6213e4c9d8d6a909e173b4,
+    type: 3}
+  action: {fileID: 11400000, guid: 1008a5b917c62424ea4f0f813731acd7, type: 2}

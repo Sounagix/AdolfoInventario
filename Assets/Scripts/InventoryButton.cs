@@ -39,4 +39,14 @@ public class InventoryButton : MonoBehaviour
     {
         AddEvent(canvasManager, item);
     }
+
+    public Button GetButton()
+    {
+        return button;
+    }
+
+    public void AddEvent(Item item, PlayerController playerController)
+    {
+        button.onClick.AddListener(() => item.ExecuteAction(playerController.weaponhand, item.itemPrefab));
+    }
 }

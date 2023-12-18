@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: EspadaHierro
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 6fb89e9805173134d822983af5ddfaa7, type: 3}
-  name: Espada de Hierro
+  itemName: Espada de hierro
   description: Espada
   stackable: 0
   itemPrefab: {fileID: 8996137435492947394, guid: 9cafeeabbc604fd438cb128ef3b9b8f5,
     type: 3}
+  action: {fileID: 11400000, guid: 1008a5b917c62424ea4f0f813731acd7, type: 2}
