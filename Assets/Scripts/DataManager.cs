@@ -1,12 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
     [SerializeField]
     private Inventory _inventory;
+
+    public static DataManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(instance);
+        }
+    }
 
 
 #if UNITY_EDITOR
@@ -95,38 +110,53 @@ public class DataManager : MonoBehaviour
         }
     }
      
-    private void AddItemAtEmptySlot(Item _item)
+    public int AddItemAtEmptySlot(Item _item)
     {
-        System.Predicate<SlotInventory> predicate = Item => Item.item == null;
-        int index = _inventory.slots.FindIndex(predicate);
+        int index = _inventory.slots.FindIndex(X => X.item == null);
         if (index >= 0)
         {
             _inventory.slots[index].item = _item;
             _inventory.slots[index].amount = 1;
+            return index;
         }
         else
         {
             Debug.Log("Inventario lleno");
+            return -1;
         }
     }
 
     public void RemoveItemAt(int _index)
     {
         _inventory.slots[_index].amount--;
-        if (_inventory.slots[_index].amount > 0)
+        if (_inventory.slots[_index].amount < 0)
         {
-            for (int i = _index; i < _inventory.slots.Count; i++)
-            {
-                MoveDownItemAtPosition(i);
-            }
+            _inventory.slots[_index].amount = 0;
+            _inventory.slots[_index].item = null;
+
+            //for (int i = _index; i < _inventory.slots.Count; i++)
+            //{
+            //    MoveDownItemAtPosition(i);
+            //    if (i == _inventory.slots.Count - 1)
+            //    {
+            //        _inventory.slots[i].amount = 0;
+            //        _inventory.slots[i].item = null;
+            //    }
+            //}
         }
     }
+
 
     public void MoveDownItemAtPosition(int _index)
     {
         if (((_index + 1) > _inventory.slots.Count) || _index > 0) return;
 
         _inventory.slots[_index] = _inventory.slots[_index + 1];
+    }
+
+    public void ChangePositions()
+    {
+
     }
 
 }

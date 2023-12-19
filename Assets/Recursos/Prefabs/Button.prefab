@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 7052923937409029171}
+  defaultImg: {fileID: 21300000, guid: 8302fcfc6755d0f4f9439656f43df864, type: 3}
   amountText: {fileID: 7052923936355844714}
   button: {fileID: 7052923935516048625}
 --- !u!1 &7052923935803593959

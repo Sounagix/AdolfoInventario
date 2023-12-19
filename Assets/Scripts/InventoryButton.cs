@@ -11,10 +11,18 @@ public class InventoryButton : MonoBehaviour
     private Image image;
 
     [SerializeField]
+    private Sprite defaultImg;
+
+    [SerializeField]
     private TextMeshProUGUI amountText;
 
     [SerializeField]
     private Button button;
+
+    private Item item;
+
+    private bool invoked = false;
+
 
     public void SetButtonImg(Sprite _img)
     {
@@ -26,18 +34,15 @@ public class InventoryButton : MonoBehaviour
         amountText.text = _amount.ToString(); 
     }
 
-    private void AddEvent(CanvasManager _canvasManager, Item item)
+    public void Init(CanvasManager canvasManager, Item _item)
     {
-        button.onClick.AddListener(
-            delegate ()
-            {
-                _canvasManager.WriteDescription(item.description);
-            });
+        item = _item;
     }
 
-    public void Init(CanvasManager canvasManager, Item item)
+    public void ResetButton()
     {
-        AddEvent(canvasManager, item);
+        image.sprite = defaultImg;
+        amountText.text = "0";
     }
 
     public Button GetButton()
@@ -45,8 +50,36 @@ public class InventoryButton : MonoBehaviour
         return button;
     }
 
-    public void AddEvent(Item item, PlayerController playerController)
+    public Item GetItem()
     {
-        button.onClick.AddListener(() => item.ExecuteAction(playerController.weaponhand, item.itemPrefab));
+        return item;
+    }
+
+    public void AddOnCLickEvent(Item _item, PlayerController playerController, CanvasManager canvasManager)
+    {
+        if (!invoked)
+        {
+            invoked = true;
+            button.onClick.AddListener(
+                delegate ()
+                {
+                    Item equipedItem = playerController.GetEquipedItem();
+                    if (equipedItem != null)
+                    {
+                        playerController.SaveEquipedItemOnInventory();
+                    }
+                    canvasManager.RemoveItemButton(_item);
+                    playerController.EquipItem(_item);
+                    canvasManager.WriteDescription(_item.description);
+                    _item.ExecuteAction(playerController.weaponhand, _item.itemPrefab);
+                });
+        }
+
+    }
+
+    public void RemoveEvent()
+    {
+        button.onClick.RemoveAllListeners();
+        invoked = false;
     }
 }

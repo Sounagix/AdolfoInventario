@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
   slots:
-  - amount: 0
-    item: {fileID: 0}
+  - amount: 1
+    item: {fileID: 11400000, guid: d1a7eb3cf43799447a03486d193cd4de, type: 2}
   - amount: 0
     item: {fileID: 0}
   - amount: 0
